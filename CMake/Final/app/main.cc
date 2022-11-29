@@ -4,7 +4,6 @@
 
 #include <cxxopts.hpp>
 #include <fmt/format.h>
-#include <spdlog/spdlog.h>
 #include <nlohmann/json.hpp>
 
 #include "config.hpp"
@@ -16,7 +15,6 @@ namespace fs = std::filesystem;
 int main(int argc, char **argv)
 {
     const auto welcome_message = fmt::format("Welcome to {} v{}\n", project_name, project_version);
-    spdlog::info(welcome_message);
 
     cxxopts::Options options(project_name.data(), welcome_message);
 

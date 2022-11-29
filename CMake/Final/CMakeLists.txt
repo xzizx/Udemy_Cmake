@@ -8,6 +8,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED     ON)
 set(CMAKE_CXX_EXTENSIONS            OFF)
 set(CMAKE_EXPORT_COMPILE_COMMANDS   ON)
 
+
 # Options
 option(USE_CONAN            "Whether to use conan or vcpkg"         ON)
 option(ENABLE_WARNINGS      "Enable to add warnings to a target."   ON)
@@ -54,16 +55,9 @@ add_git_submodule(external/json)
 FetchContent_Declare(
     fmt
     GIT_REPOSITORY https://github.com/fmtlib/fmt.git
-    GIT_TAG 8.1.1
+    GIT_TAG 5.3.0
     GIT_SHALLOW TRUE)
 FetchContent_MakeAvailable(fmt)
-
-FetchContent_Declare(
-    spdlog
-    GIT_REPOSITORY https://github.com/gabime/spdlog
-    GIT_TAG v1.9.2
-    GIT_SHALLOW TRUE)
-FetchContent_MakeAvailable(spdlog)
 
 if(USE_CONAN)
     message("Using Conan")
